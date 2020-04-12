@@ -1,0 +1,42 @@
+﻿<Window x:Class="WpfApplication1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApplication1"
+        mc:Ignorable="d"
+        Title="MainWindow" MinHeight="550" MinWidth="700" >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="0.5*"></RowDefinition>
+            <RowDefinition Height="0.5*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Stretch" Grid.Row="2" Grid.Column="0" Height="Auto" Margin="0">
+            <TextBox x:Name="Word" HorizontalAlignment="Stretch" Height="23" Margin="10" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="Auto" TextChanged="Word_TextChanged"/>
+            <TextBox x:Name="Key" Height="23" Margin="10" TextWrapping="Wrap" Text="" VerticalAlignment="Top" TextChanged="Key_TextChanged" HorizontalAlignment="Stretch" Width="Auto"/>
+            <TextBox x:Name="Message" HorizontalAlignment="Stretch" Height="23" Margin="10" TextWrapping="Wrap" VerticalAlignment="Top" Width="Auto" TextChanged="Message_TextChanged"/>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Stretch" Grid.Row="2" Grid.Column="1" Height="Auto" Margin="0">
+            <TextBox x:Name="BWord" HorizontalAlignment="Stretch" Height="23" Margin="10" TextWrapping="WrapWithOverflow" Text="" VerticalAlignment="Top" Width="Auto" TextChanged="BWord_TextChanged"/>
+            <TextBox x:Name="BKey" Height="23" Margin="10"  Text="" VerticalAlignment="Top" TextWrapping="WrapWithOverflow" TextChanged="BKey_TextChanged" HorizontalAlignment="Stretch" Width="Auto"/>
+            <TextBox x:Name="BMessage" HorizontalAlignment="Stretch" Height="23" Margin="10" TextWrapping="WrapWithOverflow" VerticalAlignment="Top" Width="Auto" TextChanged="BMessage_TextChanged"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Grid.ColumnSpan="2" Height="Auto" Margin="5" Width="Auto">
+            <Button x:Name="KeyGen" Content="Generate Key" HorizontalAlignment="Stretch" Margin="5" VerticalAlignment="Top" Width="100" Click="KeyGen_Click" />
+            <Button x:Name="MoreKeyGen" Content="Generate Ten" HorizontalAlignment="Stretch" Margin="5" VerticalAlignment="Top" Width="100" Click="MoreKeyGen_Click"/>
+            <Button x:Name="RetrieveTen" Content="Get One" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5" Width="100" Click="RetrieveTen_Click"></Button>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5" Grid.Row="1" Grid.ColumnSpan="2">
+            <Button x:Name="Cypher" Content="Cypher" HorizontalAlignment="Stretch" Margin="5" VerticalAlignment="Bottom" Width="100" Click="Cypher_Click"></Button>
+            <Button x:Name="KeyDecypher" Content="Make Key" HorizontalAlignment="Stretch" Margin="5" VerticalAlignment="Top" Width="100" Click="KeyDecypher_Click"></Button>
+            <Button x:Name="Decypher" Content="Decypher" HorizontalAlignment="Stretch" Margin="5" VerticalAlignment="Bottom" Width="100" Click="Decypher_Click"></Button>
+        </StackPanel>
+        <TextBox x:Name="TenKeyHolder" Grid.Row="3" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TextWrapping="Wrap" AcceptsReturn="True"></TextBox>
+    </Grid>
+</Window>
